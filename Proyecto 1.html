@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Los 10 ciberataques más famosos</title>
+  <style>
+    :root{
+      --azul-oscuro: #011541;
+      --azul-claro: #8498c4;
+      --fondo-bloque: #557196;
+      --texto-bloque: #fff;
+      --link: rgb(22, 12, 80);
+    }
+
+    body{
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      line-height: 1.5;
+      margin: 0;
+      color: #032644;
+    }
+
+    header.site-header{
+      background: var(--azul-oscuro);
+      color: #fff;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    nav.toc{
+      background: #fff;
+      color: var(--link);
+      padding: 1rem;
+    }
+
+    nav.toc ul{
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    nav.toc a{
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    nav.toc a:hover{
+      text-decoration: underline;
+    }
+
+    .hero{
+      background: var(--azul-claro);
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    main{
+      max-width: 1000px;
+      margin: 1.25rem auto;
+      padding: 0 1rem;
+    }
+
+    .grid-2{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+
+    article.incident{
+      background: var(--fondo-bloque);
+      color: var(--texto-bloque);
+      padding: 1rem;
+      border-radius: 6px;
+    }
+
+    h1,h2,h3,h4{
+      margin: .25rem 0 .75rem 0;
+    }
+
+    .referencias dl{
+      background: #f7f7f7;
+      padding: 1rem;
+      border-radius: 6px;
+    }
+
+    aside.credito{
+      margin-top: 1rem;
+      background: #fff3cd;
+      padding: 0.75rem;
+      border-radius: 6px;
+    }
+
+    footer.site-footer{
+      text-align: center;
+      padding: 1rem;
+      border-top: 1px solid #e0e0e0;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <h1>Los 10 ciberataques más famosos de la historia</h1>
+  </header>
+
+  <nav class="toc" aria-label="Índice">
+    <ul>
+      <li><a href="#contexto-historico"><strong>Contexto histórico</strong></a></li>
+      <li><a href="#tipos-ataques"><strong>Tipos de ataques</strong></a></li>
+      <li><a href="#top-10"><strong>Top 10</strong></a></li>
+      <li><a href="#importancia"><strong>Importancia</strong></a></li>
+    </ul>
+  </nav>
+
+  <section class="hero" id="contexto-historico" aria-labelledby="contexto-title">
+    <h2 id="contexto-title">Contexto Histórico de los ciberataques</h2>
+    <p>La historia de los ciberataques comienza en 1834 con el hackeo del sistema telegráfico francés. Con el desarrollo de las redes informáticas en la década de 1950 y 1960, los ciberataques evolucionaron, siendo el gusano Morris de 1988 un hito importante.
+        Ataques más recientes, como el ransomware WannaCry (2017), el ciberataque a SolarWinds (2020), y el ciberataque a Colonial Pipeline (2021), han demostrado el impacto real de los ataques en infraestructuras críticas y la vida cotidiana. </p>
+  </section>
+
+  <main>
+    <section id="tipos-ataques" aria-labelledby="tipos-title">
+      <h2 id="tipos-title">Tipos de ataques más comunes</h2>
+      <p> <strong>Entre los tipos más frecuentes se incluyen:</strong></p>
+        <ul> 
+            <li><em>ransomware.</em></li>
+            <li><em>phishing.</em></li> 
+            <li><em>exfiltración de datos.</em></li>
+            <li><em>ataques a la cadena de suministro.</em></li>
+            <li><em>DDoS.</em></li>
+        </ul></section>
+
+    <section id="top-10" aria-labelledby="top10-title">
+      <h2 id="top10-title">Top 10 ciberataques más famosos</h2>
+
+      <div class="grid-2">
+        <article class="incident" aria-labelledby="sony-title">
+          <h3 id="sony-title">1. Sony Pictures (2014)</h3>
+          <p>Robo y difusión de información sensible, documentos internos y datos de empleados; impacto en la producción y operaciones.</p>
+        </article>
+
+        <article class="incident" aria-labelledby="equifax-title">
+          <h3 id="equifax-title">2. Equifax (2017)</h3>
+          <p>Filtración masiva que expuso datos personales de ~143 millones de personas (SSN, tarjetas, direcciones).</p>
+        </article>
+
+        <article class="incident" aria-labelledby="yahoo-title">
+          <h3 id="yahoo-title">3. Yahoo (2013)</h3>
+          <p>Violación que afectó a aproximadamente 3.000 millones de cuentas con robo de correos, contraseñas y datos personales.</p>
+        </article>
+
+        <article class="incident" aria-labelledby="target-title">
+          <h3 id="target-title">4. Target (2013)</h3>
+          <p>Compromiso de datos de clientes (millones de tarjetas de crédito y datos asociados).</p>
+        </article>
+
+        <article class="incident" aria-labelledby="wannacry-title">
+          <h3 id="wannacry-title">5. WannaCry (2017)</h3>
+          <p>Ransomware de alcance global que afectó a más de 200,000 equipos en decenas de países; uso de exploit EternalBlue.</p>
+        </article>
+
+        <article class="incident" aria-labelledby="ebay-title">
+          <h3 id="ebay-title">6. eBay (2014)</h3>
+          <p>Notificación pública para que usuarios cambiasen contraseña tras detectar acceso indebido a sistemas.</p>
+        </article>
+
+        <article class="incident" aria-labelledby="uber-title">
+          <h3 id="uber-title">7. Uber (2016)</h3>
+          <p>Exposición de datos de millones de usuarios y conductores; controversia por pago a atacantes para ocultar la brecha.</p>
+        </article>
+
+        <article class="incident" aria-labelledby="cambridge-title">
+          <h3 id="cambridge-title">8. Cambridge Analytica (2018)</h3>
+          <p>Uso indebido de datos de ~50 millones de perfiles de Facebook con fines de segmentación política y persuasión.</p>
+        </article>
+
+        <article class="incident" aria-labelledby="psn-title">
+          <h3 id="psn-title">9. Sony PlayStation Network (2011)</h3>
+          <p>Compromiso de datos de alrededor de 77 millones de cuentas; caída del servicio y reparación masiva de seguridad.</p>
+        </article>
+
+        <article class="incident" aria-labelledby="dropbox-title">
+          <h3 id="dropbox-title">10. Dropbox (2012)</h3>
+          <p>Filtración que expuso correos y contraseñas; la magnitud completa se conoció con el paso del tiempo.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="importancia" aria-labelledby="importancia-title">
+      <h2 id="importancia-title">Importancia de estudiar casos de ciberseguridad</h2>
+      <p>Analizar incidentes históricos ayuda a mejorar prácticas de seguridad, detección temprana, respuesta ante incidentes y políticas de gestión del riesgo.</p>
+    </section>
+
+    <section class="referencias" aria-labelledby="refs-title">
+      <h2 id="refs-title">Referencias</h2>
+      <dl> <ol>
+        <li><dt>Araujo, A., & Araujo, A. (2024)</dt></li>
+        <dd>Los 10 ciberataques más famosos de la historia. Hackmetrix.</dd>
+
+        <li><dt>Contreras, R. (2023)</dt></li>
+        <dd>Los 10 ciberataques más grandes de la década. Computing.</dd>
+
+        <li><dt>CyberSecurity (2024)</dt></li>
+        <dd>Los 20 ciberataques más “sonados” de la historia. ESED.</dd>
+            </ol>  </dl>
+    </section>
+
+    <aside class="credito" aria-labelledby="credito-title">
+      <h3 id="credito-title">Crédito</h3>
+      <p>Esta página fue elaborada por alumnos de la carrera de Ingeniería en Sistemas Computacionales de la <mark>Universidad Internacional de Querétaro</mark>. Agradecemos tu visita.</p>
+    </aside>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <p>Proyecto de: Evelyn Valeria Callejas Aguilar y Jesús Yael Vizcaya Domínguez</p>
+  </footer>
+</body>
+</html>
