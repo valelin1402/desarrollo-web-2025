@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clase JavaScript</title>
+</head>
+<body>
+    <section id="app"></section>
+    <section>
+        <h1>Calculadora de IVA</h1>
+        <form id="ivaform">
+        <label>Precio base:</label>
+        <input type="number" id="preciobase" requiered>
+        <br><br>
+        <label>tasa de IVA (%):</label>
+        <input type="number" id="tasaIVA" value="16" required>
+        <br><br>
+        <button type="submit">Calcular</button>
+        </form>
+        <div id="resultado">resultado</div>
+    </section>
+
+    <script>
+        // Codigo JavaScript aqui
+        function calcularIVA(preciobase,tasaIVA = 16){
+            const ivaDecimal = tasaIVA / 100;
+            const iva = preciobase * ivaDecimal;
+            const total = preciobase + iva;
+            return{ preciobase, iva, total};
+        }
+        const form = document.getElementById("ivaform");
+        const resultadoDiv = document.getElementById("resultado");
+        event.preventDefault();
+
+        
+
+    </script>
+</body>
+</html>
