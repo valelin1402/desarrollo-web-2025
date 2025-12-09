@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preguntas</title>
+</head>
+<body>
+    <h1>Formulario </h1>
+    <form action="/procesar"
+        method="post">
+    <label tor="nombre ">Nombre: </label>
+        <input placeholder="Nombre "></input> 
+
+    <label  type="email">Email: </label> 
+        <input placeholder="Email"></input> 
+
+    <label type="number">Edad: </label>
+        <input placeholder="Edad"></input> 
+
+    <!--<input type="datetime-local" name="datetime" id="datetime"/>-->
+    <input type="date" name="fecha-nac" id="fecha-nac"> <br>
+    <label for="Fecha de nacimiento"></label>
+<br>
+
+    <label>Genero</label> <br>
+
+    <input type="radio" id="Masculino" name="Genero" value="Masculino"> 
+    <label for="Masculino">Masculino </label><br>
+
+    <input type="radio" id="Femenino" name="Genero" value="Femenino"> 
+    <label for="Femenino">Femenino </label> <br>
+
+    <label for="intereses">Intereses: </label> <br>
+    <input type="checkbox" name="intereses" value="Programacion"> Programacion <br>
+    <input type="checkbox" name="intereses" value="diseño">Diseño <br><br>
+
+    <label for="pais"> Pais </label>
+    <select id="pais" name="pais">
+        <option value="mexico">Mexico </option>
+        <option value="argentina">Argentina</option>
+        <option value="colombia">Colombia</option>
+    </select> <br><br>
+    <label for="apellidopaterno">Apellido Paterno</label>
+    <input type="text" for="paterno" name="paterno" required minlength="3">
+
+</body>
+</html>
