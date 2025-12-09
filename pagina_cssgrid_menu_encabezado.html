@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Página con CSS Grid</title>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    /* GRID PRINCIPAL */
+    .grid-container {
+        display: grid;
+        grid-template-columns: 250px 1fr;
+        grid-template-rows: 70px 1fr;
+        grid-template-areas:
+            "menu header"
+            "menu contenido";
+        height: 100vh;
+    }
+
+    /* MENU IZQUIERDO */
+    .menu {
+        grid-area: menu;
+        background: #2b4d8f;
+        color: white;
+        padding: 20px;
+    }
+
+    .menu h3 {
+        margin-top: 0;
+    }
+
+    .menu ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .menu li {
+        margin: 15px 0;
+    }
+
+    /* ENCABEZADO */
+    .header {
+        grid-area: header;
+        background: #1a2d4e;
+        color: white;
+        display: flex;
+        align-items: center;
+        padding-left: 20px;
+        font-size: 1.3rem;
+    }
+
+    /* CONTENIDO */
+    .contenido {
+        grid-area: contenido;
+        padding: 20px;
+    }
+</style>
+</head>
+<body>
+
+<div class="grid-container">
+    <aside class="menu">
+        <h3>Menú</h3>
+        <ul>
+            <li>Inicio</li>
+            <li>Servicios</li>
+            <li>Contacto</li>
+        </ul>
+    </aside>
+
+    <header class="header">
+        Encabezado Principal
+    </header>
+
+    <main class="contenido">
+        <h2>Contenido de la página</h2>
+        <pre>El clickjacking (también llamado secuestro de clics) es un tipo de ataque en el que un sitio malicioso engaña al usuario para que haga clic en algo diferente a lo que cree, ocultando o superponiendo elementos.
+
+Explicado simple:
+
+Es como poner un botón invisible encima de otro.
+Tú crees que estás dando clic en “Reproducir”, pero en realidad estás dando clic en un botón oculto que hace otra acción, como autorizar algo o abrir una página peligrosa.
+
+Cómo funciona normalmente</pre>
+        <iframe src="https://player.vimeo.com/video/76974561">
+            
+        </iframe>
+
+    </main>
+</div>
+
+</body>
+</html>
