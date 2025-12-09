@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Práctica de imágenes</title>
+  <style>
+    .info-box {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-top: 10px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    td {
+      padding: 4px 8px;
+      vertical-align: top;
+    }
+  </style>
+</head>
+<body>
+  <h1 style="font-size: 10vw; margin: 0 0 12px 0;">Práctica Imágenes</h1>
+
+  <h2>Imagen normal</h2>
+  <!-- Usa rutas relativas; coloca las imágenes en la misma carpeta o ajusta la ruta -->
+  <img src="imagen/ign.jpg" 
+       alt="Iguana verde" 
+       style="max-width: 100%; height: auto;" />
+  <br>
+
+  <h2>Imagen responsive</h2>
+  <img src="imagen/iguana parada.jpg" 
+       alt="Iguana parada sobre rama" 
+       style="width: 100%; height: auto;" />
+  <br>
+
+  <h2>Uso del picture</h2>
+  <picture>
+    <source srcset="fluffy-dog-9846034.jpg" media="(max-width: 600px)">
+   <source srcset="skeleton-23246_256.gif" media="(min-width: 601px)">
+    <img src="supra.jpg" alt="Carro" style="width: 100%; height: auto;">
+  </picture>
+
+  <hr>
+
+  <h2>Mapa interactivo</h2>
+  <img src="supra.jpg" alt="Coche Supra" style="width: 100%; height: auto;" />
+
+  <svg viewBox="0 0 800 640" width="100%" height="auto" style="display:block; border:1px solid #ccc;">
+    <rect x="50" y="50" width="700" height="400" fill="none" stroke="#666" stroke-width="3"/>
+    <line x1="400" y1="50" x2="400" y2="450" stroke="#666" stroke-width="2" stroke-dasharray="5,5"/>
+
+    <!--Recepcion-->
+    <rect class="area" x="100" y="100" width="200" height="120" fill="#9bbad1"
+          stroke="blue" stroke-width="2" onclick="mostrarInfo('recepcion')" />
+    <text x="200" y="150" text-anchor="middle" fill="white">CLICK AQUÍ</text>
+    <text x="200" y="180" text-anchor="middle" fill="white">Recepción</text>
+
+    <!--Desarrollo-->
+     <rect class="area" x="450" y="100" width="200" height="120" fill="transparent"
+          stroke="red" stroke-width="2" onclick="mostrarInfo('desarrollo')" />
+    <text x="550" y="150" text-anchor="middle" fill="red">CLICK AQUÍ</text>
+    <text x="550" y="180" text-anchor="middle" fill="red">Desarrollo</text>
+
+    <!--Servidores-->
+     <rect class="area" x="100" y="300" width="200" height="100" fill="transparent"
+          stroke="brown" stroke-width="2" onclick="mostrarInfo('servidores')" />
+    <text x="200" y="350" text-anchor="middle" fill="brown">CLICK AQUÍ</text>
+    <text x="200" y="380" text-anchor="middle" fill="brown">Servidores</text>
+
+    <!--Reuniones-->
+     <circle class="area" cx="550" cy="350" r="60" fill="transparent"
+            stroke="darkred" stroke-width="2" onclick="mostrarInfo('reuniones')" />
+    <text x="550" y="340" text-anchor="middle" fill="darkred">CLICK AQUÍ</text>
+    <text x="550" y="365" text-anchor="middle" fill="darkred">Reuniones</text>
+  </svg>
+
+
+    <rect class="area-hover" 
+          x="100" y="100" width="250" height="150" 
+          fill="transparent" stroke="red" stroke-width="2" 
+          onclick="mostrarInfo('recepcion')" 
+          style="cursor: pointer;" />
+  </svg>
+
+  <section id="infoPanel" class="info-box">
+    <h3>Información del Área</h3>
+    <p id="areaInfo">Haz click en cualquier área del plano para ver su información técnica.</p>
+    <div id="areaDetails"></div>
+  </section>
+  
+
+  <script>
+    const areasData = {
+      recepcion: {
+        nombre: "Recepción y Atención al usuario",
+        responsable: "Ana Martínez",
+        equipos: "3 PCs, 1 Impresora, 1 Teléfono IP",
+        sistema: "Sistema de Tickets v2.1",
+        estado: "Operativo"
+    },
+      desarrollo: {
+        nombre: "Área de Desarrollo",
+        responsable: "Luis Pérez",
+        equipos: "5 Laptops, 1 Servidor Local",
+        sistema: "Entorno de Pruebas y Git",
+        estado: "En mantenimiento"
+      },
+      servidores: {
+        nombre: "Centro de Servidores",
+        responsable: "Carlos Gómez",
+        equipos: "3 Servidores, 2 UPS, 1 NAS",
+        sistema: "Linux Ubuntu Server",
+        estado: "Activo"
+      },
+      reuniones: {
+        nombre: "Sala de Reuniones",
+        responsable: "María López",
+        equipos: "1 Proyector, 1 Pantalla, 10 Sillas",
+        sistema: "Conexión Zoom Pro",
+        estado: "Disponible"
+      }
+    }
+
+
+    function mostrarInfo(areaKey) {
+      const area = areasData[areaKey];
+      const infoPanel = document.getElementById('areaInfo');
+      const detailsPanel = document.getElementById('areaDetails');
+
+      if (area) {
+        infoPanel.innerHTML = `<strong>${area.nombre}</strong>`;
+        detailsPanel.innerHTML = `
+          <table>
+            <tr>
+              <td><strong>Responsable:</strong></td>
+              <td>${area.responsable}</td>
+            </tr>
+            <tr>
+              <td><strong>Equipos:</strong></td>
+              <td>${area.equipos}</td>
+            </tr>
+            <tr>
+              <td><strong>Sistema:</strong></td>
+              <td>${area.sistema}</td>
+            </tr>
+            <tr>
+              <td><strong>Estado:</strong></td>
+              <td>${area.estado}</td>
+            </tr>
+          </table>
+          <p>Última actualización: ${new Date().toLocaleString()}</p>
+            <tr>
+                <td><strong>Responsable:</strong></td>
+                <td>${area.responsable}</td>
+            </tr>
+            <tr>
+                <td><strong>Equipos:</strong>
+                </td><td>${area.equipos}</td>
+            </tr>
+            <tr>
+                <td><strong>Sistema:</strong></td>
+                <td>${area.sistema}</td>
+            </tr>
+            <tr>
+                <td><strong>Estado:</strong></td>
+                <td>${area.estado}</td>
+            </tr>
+          </table>
+          <p>Última actualización: ${new Date().toLocaleString()}</p>
+        `;
+      }
+    }
+   </script>
+  </body>
+</html>
